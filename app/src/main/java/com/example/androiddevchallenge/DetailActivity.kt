@@ -80,8 +80,7 @@ fun PetIntroduce(pet: Pet, onAdopt: () -> Unit) {
                     Text(text = "Description:", modifier = Modifier.padding(10.dp))
                 }
                 item {
-                    Text(text = pet.description, style = MaterialTheme.typography.subtitle2,
-                        modifier = Modifier.padding(start = 10.dp, end = 10.dp, bottom = 100.dp).wrapContentWidth(Alignment.Start), color = Color.Gray
+                    Text(text = pet.description, style = MaterialTheme.typography.subtitle2, modifier = Modifier.padding(start = 10.dp, end = 10.dp, bottom = 100.dp).wrapContentWidth(Alignment.Start), color = Color.Gray
                     )
                 }
             }
