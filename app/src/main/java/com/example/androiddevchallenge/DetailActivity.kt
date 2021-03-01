@@ -71,12 +71,7 @@ fun PetIntroduce(pet: Pet, onAdopt: () -> Unit) {
             LazyColumn(modifier = Modifier.fillMaxSize()) {
                 item { AppBar(pet.name) }
                 item {
-                    Image(painter = painterResource(id = pet.photo),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(10.dp),
-                        contentScale = ContentScale.Crop)
+                    Image(painter = painterResource(id = pet.photo), contentDescription = null, modifier = Modifier.fillMaxWidth().padding(10.dp), contentScale = ContentScale.Crop)
                 }
                 item {
                     Text(text = "Cat Name: ${pet.name}", modifier = Modifier.padding(10.dp))
@@ -86,25 +81,19 @@ fun PetIntroduce(pet: Pet, onAdopt: () -> Unit) {
                 }
                 item {
                     Text(text = pet.description, style = MaterialTheme.typography.subtitle2,
-                        modifier = Modifier
-                            .padding(start = 10.dp, end = 10.dp, bottom = 100.dp)
-                            .wrapContentWidth(Alignment.Start),
-                        color = Color.Gray
+                        modifier = Modifier.padding(start = 10.dp, end = 10.dp, bottom = 100.dp).wrapContentWidth(Alignment.Start), color = Color.Gray
                     )
                 }
             }
         }
-        Box(modifier = Modifier
-            .align(Alignment.BottomCenter)
-            .padding(bottom = 20.dp)) {
+        Box(modifier = Modifier.align(Alignment.BottomCenter).padding(bottom = 20.dp)) {
             FloatingActionButton(onClick = onAdopt,
                 backgroundColor = MaterialTheme.colors.primary,
                 shape = MaterialTheme.shapes.small.copy(CornerSize(percent = 50))) {
                 Text(
                     text = "Adopt ${if (pet.gender == "boy") "him" else "her"}",
                     color = Color.White,
-                    modifier = Modifier
-                        .padding(start = 60.dp, end = 60.dp)
+                    modifier = Modifier.padding(start = 60.dp, end = 60.dp)
                 )
             }
         }
