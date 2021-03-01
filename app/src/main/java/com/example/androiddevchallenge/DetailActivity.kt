@@ -57,10 +57,7 @@ class DetailActivity : AppCompatActivity() {
         setContent {
             MyTheme {
                 PetIntroduce(pet) {
-                    Toast.makeText(this,
-                        "Congratulations!!! You have got the pet ${pet.name}",
-                        Toast.LENGTH_SHORT)
-                        .show()
+                    Toast.makeText(this, "Congratulations!!! You have got the pet ${pet.name}", Toast.LENGTH_SHORT).show()
                 }
             }
         }
