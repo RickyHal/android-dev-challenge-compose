@@ -15,18 +15,18 @@
  */
 package com.example.androiddevchallenge
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.compose.setContent
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CornerSize
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.FloatingActionButton
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -80,15 +80,18 @@ fun PetIntroduce(pet: Pet, onAdopt: () -> Unit) {
                     Text(text = "Description:", modifier = Modifier.padding(10.dp))
                 }
                 item {
-                    Text(text = pet.description, style = MaterialTheme.typography.subtitle2, modifier = Modifier.padding(start = 10.dp, end = 10.dp, bottom = 100.dp).wrapContentWidth(Alignment.Start), color = Color.Gray
+                    Text(
+                        text = pet.description, style = MaterialTheme.typography.subtitle2, modifier = Modifier.padding(start = 10.dp, end = 10.dp, bottom = 100.dp).wrapContentWidth(Alignment.Start), color = Color.Gray
                     )
                 }
             }
         }
         Box(modifier = Modifier.align(Alignment.BottomCenter).padding(bottom = 20.dp)) {
-            FloatingActionButton(onClick = onAdopt,
+            FloatingActionButton(
+                onClick = onAdopt,
                 backgroundColor = MaterialTheme.colors.primary,
-                shape = MaterialTheme.shapes.small.copy(CornerSize(percent = 50))) {
+                shape = MaterialTheme.shapes.small.copy(CornerSize(percent = 50))
+            ) {
                 Text(
                     text = "Adopt ${if (pet.gender == "boy") "him" else "her"}",
                     color = Color.White,

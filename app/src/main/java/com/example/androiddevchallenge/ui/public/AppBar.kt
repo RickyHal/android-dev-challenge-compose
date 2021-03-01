@@ -29,11 +29,13 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun AppBar(title: String) {
     TopAppBar(elevation = 0.dp) {
-        Text(text = title, style = MaterialTheme.typography.h5,
+        Text(
+            text = title, style = MaterialTheme.typography.h5,
             modifier = Modifier
                 .fillMaxSize()
                 .wrapContentHeight(Alignment.CenterVertically),
             color = androidx.compose.ui.graphics.Color.White,
-            textAlign = TextAlign.Center)
+            textAlign = TextAlign.Center
+        )
     }
 }
